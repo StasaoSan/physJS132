@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Графики движения</title>
+    <link rel="stylesheet" type="text/css" href="testCSS.css">
+</head>
+<body>
+<div>
+    <label for="functionInput">Введите функцию (x(t), v(t) или a(t)):</label>
+    <input type="text" id="functionInput" placeholder="Например, x(t)=t^2">
+</div>
+<div>
+    <button id="drawGraphsButton">Построить графики</button>
+    <button id="toggleThemeButton" class="theme-button">
+        <i class="fas fa-sun"></i>
+        <i class="fas fa-moon"></i>
+    </button>
+</div>
+<div class="graph-container">
+    <div class="main-graph">
+        <canvas id="mainGraph"></canvas>
+    </div>
+    <div class="side-graphs">
+        <canvas id="sideGraph1"></canvas>
+        <canvas id="sideGraph2"></canvas>
+    </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.4.4/math.min.js"></script>
+<script src="test.js"></script>
+</body>
+</html>
