@@ -47,7 +47,6 @@ canvas:last-child {
     margin-bottom: 0;
 }
 
-/* Стили для поля ввода */
 #functionInput {
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -62,62 +61,61 @@ canvas:last-child {
     outline: none;
 }
 
-/* Стили для кнопки построения графиков */
 #drawGraphsButton {
-    background-color: #f0f0f0; /* Цвет фона */
-    border: 1px solid #ddd; /* Граница */
-    padding: 5px 10px; /* Отступы */
-    cursor: pointer; /* Курсор в виде руки */
-    border-radius: 5px; /* Скругленные углы */
-    font-size: 16px; /* Размер шрифта */
-    transition: background-color 0.3s, border-color 0.3s; /* Плавное изменение цвета фона и границы */
-}
-
-#drawGraphsButton:hover {
-    background-color: #e0e0e0; /* Цвет фона при наведении */
-    border-color: #ccc; /* Цвет границы при наведении */
-}
-
-/* Стили для кнопки показа примеров */
-#showExamplesButton {
-    background-color: #f0f0f0; /* Цвет фона */
-    border: 1px solid #ddd; /* Граница */
-    padding: 5px 10px; /* Отступы */
-    position: absolute; /* Абсолютное позиционирование */
-    right: 90px; /* Справа от края */
-    top: 15px; /* Смещение сверху */
-    width: 150px; /* Ширина блока */
-    cursor: pointer; /* Курсор в виде руки */
-    border-radius: 5px; /* Скругленные углы */
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
     transition: background-color 0.3s, border-color 0.3s;
 }
 
+#drawGraphsButton:hover {
+    background-color: #e0e0e0;
+    border-color: #ccc;
+}
+
+#showExamplesButton {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    position: absolute;
+    right: 90px;
+    top: 15px;
+    width: 150px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+
 #showExamplesButton:hover {
-    background-color: #e0e0e0; /* Цвет фона при наведении */
-    border-color: #ccc; /* Цвет границы при наведении */
+    background-color: #e0e0e0;
+    border-color: #ccc;
 }
 
 #exampleList {
     margin-top: 10px;
-    border: 1px solid #ddd; /* Граница */
-    padding: 10px; /* Отступы */
-    border-radius: 5px; /* Скругленные углы */
-    position: absolute; /* Абсолютное позиционирование */
-    right: 20px; /* Справа от края */
-    top: 60px; /* Смещение сверху */
-    width: 300px; /* Ширина блока */
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    position: absolute;
+    right: 20px;
+    top: 60px;
+    width: 300px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Тень */
     background-color: #fff;
-    display: none; /* Скрыто по умолчанию */
+    display: none;
 }
 
 .night-theme #showExamplesButton:hover {
-    background-color: #666; /* Цвет фона при наведении в темной теме */
-    border-color: #777; /* Цвет границы при наведении в темной теме */
+    background-color: #666;
+    border-color: #777;
 }
 
 .night-theme #exampleList {
-    background-color: #444; /* Темно-серый фон для темной темы */
+    background-color: #444;
 }
 
 /* Адаптация к темной теме */
