@@ -3,6 +3,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const toggleThemeButton = document.getElementById('toggleThemeButton');
     const showExamplesButton = document.getElementById('showExamplesButton');
     const exampleList = document.getElementById('exampleList');
+    const modal = document.getElementById("loadingModal");
+    const span = document.getElementsByClassName("close")[0];
+
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    function showLoadingModal() {
+        modal.style.display = "block";
+    }
+
+    function hideLoadingModal() {
+        modal.style.display = "none";
+    }
 
     function clearCanvas(canvasId) {
         const canvas = document.getElementById(canvasId);
@@ -96,7 +110,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 values.push(parseFloat(value.toFixed(2)));
             }
         }
-
         return values;
     }
 
@@ -132,8 +145,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     }
 
+    document.getElementById('drawGraphsButton').addEventListener('click', function() {
+        showLoadingModal();
 
-    document.getElementById('drawGraphsButton').addEventListener('click', determineAndDrawGraphs);
+        setTimeout(function() {
+            determineAndDrawGraphs();
+            hideLoadingModal();
+        }, 50);
+    });
+
+
 
     toggleThemeButton.addEventListener('click', () => {
         document.body.classList.toggle('night-theme');
