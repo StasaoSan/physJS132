@@ -47,6 +47,108 @@ canvas:last-child {
     margin-bottom: 0;
 }
 
-input, button {
-    margin: 10px 0;
+/* Стили для поля ввода */
+#functionInput {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px 10px;
+    width: 200px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+#functionInput:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Стили для кнопки построения графиков */
+#drawGraphsButton {
+    background-color: #f0f0f0; /* Цвет фона */
+    border: 1px solid #ddd; /* Граница */
+    padding: 5px 10px; /* Отступы */
+    cursor: pointer; /* Курсор в виде руки */
+    border-radius: 5px; /* Скругленные углы */
+    font-size: 16px; /* Размер шрифта */
+    transition: background-color 0.3s, border-color 0.3s; /* Плавное изменение цвета фона и границы */
+}
+
+#drawGraphsButton:hover {
+    background-color: #e0e0e0; /* Цвет фона при наведении */
+    border-color: #ccc; /* Цвет границы при наведении */
+}
+
+/* Стили для кнопки показа примеров */
+#showExamplesButton {
+    background-color: #f0f0f0; /* Цвет фона */
+    border: 1px solid #ddd; /* Граница */
+    padding: 5px 10px; /* Отступы */
+    position: absolute; /* Абсолютное позиционирование */
+    right: 90px; /* Справа от края */
+    top: 15px; /* Смещение сверху */
+    width: 150px; /* Ширина блока */
+    cursor: pointer; /* Курсор в виде руки */
+    border-radius: 5px; /* Скругленные углы */
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+#showExamplesButton:hover {
+    background-color: #e0e0e0; /* Цвет фона при наведении */
+    border-color: #ccc; /* Цвет границы при наведении */
+}
+
+#exampleList {
+    margin-top: 10px;
+    border: 1px solid #ddd; /* Граница */
+    padding: 10px; /* Отступы */
+    border-radius: 5px; /* Скругленные углы */
+    position: absolute; /* Абсолютное позиционирование */
+    right: 20px; /* Справа от края */
+    top: 60px; /* Смещение сверху */
+    width: 300px; /* Ширина блока */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Тень */
+    background-color: #fff;
+    display: none; /* Скрыто по умолчанию */
+}
+
+.night-theme #showExamplesButton:hover {
+    background-color: #666; /* Цвет фона при наведении в темной теме */
+    border-color: #777; /* Цвет границы при наведении в темной теме */
+}
+
+.night-theme #exampleList {
+    background-color: #444; /* Темно-серый фон для темной темы */
+}
+
+/* Адаптация к темной теме */
+.night-theme #functionInput {
+    background-color: #555;
+    color: white;
+    border-color: #777;
+}
+
+.night-theme #functionInput:focus {
+    border-color: #1a73e8;
+}
+
+.night-theme #drawGraphsButton {
+    background-color: #555;
+    color: white;
+    border-color: #666;
+}
+
+.night-theme #drawGraphsButton:hover {
+    background-color: #666;
+    border-color: #777;
+}
+
+.night-theme #showExamplesButton {
+    background-color: #555;
+    color: white;
+    border-color: #666;
+}
+
+.night-theme #showExamplesButton:hover {
+    background-color: #666;
+    border-color: #777;
 }
