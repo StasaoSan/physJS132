@@ -63,24 +63,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         });
     }
 
-    function integrateFunction(func, variable, start, end, step) {
-        let totalArea = 0;
-        for (let x = start; x < end; x += step) {
-
-            let functionAtX = func.replace(new RegExp(variable, 'g'), `(${x})`).replace(/log\((.*?), (.*?)\)/g, (match, number, base) =>
-                `math.log(${number}, ${base})`
-            );
-            let functionAtNextX = func.replace(new RegExp(variable, 'g'), `(${x + step})`).replace(/log\((.*?), (.*?)\)/g, (match, number, base) =>
-                `math.log(${number}, ${base})`
-            );
-
-            let valueAtX = math.evaluate(functionAtX);
-            let valueAtNextX = math.evaluate(functionAtNextX);
-            let averageHeight = (valueAtX + valueAtNextX) / 2;
-            totalArea += averageHeight * step;
-        }
-        return totalArea;
-    }
 
     function calculateValues(userFunction, derivativeOrder = 0) {
         let values = [];
@@ -98,16 +80,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
             evaluatedFunction = evaluatedFunction.replace(/log\((.*?), (.*?)\)/g, (match, number, base) =>
                 `math.log(${number}, ${base})`
             );
-
+            console.log(evaluatedFunction);
             if (derivativeOrder === -1 || derivativeOrder === -2) {
-                let integralValue = integrateFunction(evaluatedFunction, 't', 0, t, 0.01);
-                if (derivativeOrder === -2) {
-                    integralValue = integrateFunction(integralValue.toString(), 't', 0, t, 0.01);
-                }
-                values.push(parseFloat(integralValue.toFixed(2)));
+                let integral = nerdamer.integrate(userFunction).text();
+                let integralValue = nerdamer(integral, { x: t }).evaluate().text();
+                console.log(integralValue);
+                values.push(parseFloat(integralValue));
             } else {
                 let value = math.evaluate(evaluatedFunction);
-                values.push(parseFloat(value.toFixed(2)));
+                values.push(parseFloat(value));
             }
         }
         return values;
